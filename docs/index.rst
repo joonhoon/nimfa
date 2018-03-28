@@ -232,6 +232,7 @@ References
 
 .. [Kapralov2016] Michael, Kapralov, Vamsi Potluru, David Woodruff. How to fake multiply by a Gaussian Matrix. ICML, 2101-2110. 2016.
 
+.. [Choi2008] Seungjin Choi. Algorithms for orthogonal nonnegative matrix factorization. IEEE International Joint Conference on Neural Networks, 1828-1832, 2008.
 
 ########
 Citation

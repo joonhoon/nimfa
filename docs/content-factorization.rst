@@ -13,6 +13,8 @@
 
  * **NSNMF** - Nonsmooth nonnegative matrix factorization [Montano2006]_
 
+ * **ONMF** - Orthogonal nonnegative matrix factorization [Choi2008]_
+
  * **PMF** - Probabilistic nonnegative matrix factorization [Laurberg2008]_, [Hansen2008]_
 
  * **PSMF** - Probabilistic sparse matrix factorization [Dueck2005]_, [Dueck2004]_, [Srebro2001]_, [Li2007]_

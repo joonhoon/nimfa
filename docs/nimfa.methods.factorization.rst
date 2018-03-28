@@ -26,6 +26,8 @@ Factorization (``methods.factorization``)
    
    nimfa.methods.factorization.nsnmf
    
+   nimfa.methods.factorization.onmf
+   
    nimfa.methods.factorization.pmf
    
    nimfa.methods.factorization.psmf
