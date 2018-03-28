@@ -143,7 +143,7 @@ class Onmf(nmf_std.Nmf_std):
     def __init__(self, V, seed=None, W=None, H=None, rank=30, max_iter=30,
                  min_residuals=1e-5, test_conv=None, n_run=1, callback=None,
                  callback_init=None, track_factor=False, track_error=False,
-                 update='basis', objective='fro', conn_change=30, **options):
+                 update='onmf_basis', objective='fro', conn_change=30, **options):
         self.name = "onmf"
         self.aseeds = ["random", "fixed", "nndsvd", "random_c", "random_vcol"]
         nmf_std.Nmf_std.__init__(self, vars())
