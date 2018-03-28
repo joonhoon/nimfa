@@ -442,6 +442,23 @@ class Nmf(object):
         spars_H = np.mean([sparseness(H[:, i]) for i in range(H.shape[1])])
         return spars_W, spars_H
 
+    def orthogonality(self, idx=None):
+        """
+        Compute orthogonality of matrix (basis vectors matrix, mixture coefficients)
+        """
+        def orthogonality(x):
+            x1 = np.dot(x.T,x)
+            if sp.isspmatrix(x1):
+                x2 = sp.linalg.norm(x1-sp.spdiags(x1.diagonal(),0,x1.diagonal().size,x1.diagonal().size)) / sp.linalg.norm(x1)
+            else:                    
+                x2 = np.linalg.norm(x1-np.diag(np.diag(x1))) / np.linalg.norm(x1)
+            return x2
+        W = self.basis()
+        H = self.coef(idx)
+        ortho_W = orthogonality(W)
+        ortho_H = orthogonality(H.T)
+        return ortho_W, ortho_H
+        
     def coph_cor(self, idx=None):
         """
         Compute cophenetic correlation coefficient of consensus matrix, generally obtained from multiple NMF runs. 

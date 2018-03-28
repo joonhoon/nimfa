@@ -128,6 +128,7 @@ class Mf_fit():
         return {
             'rank': self.fit.rank,
             'sparseness': self.fit.sparseness(idx=idx),
+            'orthogonality': self.fit.orthogonality(idx=idx),
             'rss': self.fit.rss(idx=idx),
             'evar': self.fit.evar(idx=idx),
             'residuals': self.fit.residuals(idx=idx),
