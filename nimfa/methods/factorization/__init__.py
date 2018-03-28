@@ -9,6 +9,7 @@ from .lfnmf import *
 from .lsnmf import *
 from .nmf import *
 from .nsnmf import *
+from .onmf import *
 from .pmf import *
 from .psmf import *
 from .snmf import *
@@ -23,6 +24,7 @@ methods = {"bd": Bd,
            "lsnmf": Lsnmf,
            "nmf": Nmf,
            "nsnmf": Nsnmf,
+           "onmf": Onmf,
            "pmf": Pmf,
            "psmf": Psmf,
            "snmf": Snmf,

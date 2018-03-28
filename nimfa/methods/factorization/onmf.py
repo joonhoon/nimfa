@@ -98,8 +98,8 @@ class Onmf(nmf_std.Nmf_std):
     :param update: The matrix which orthogonality constraint is imposed on.
         When specifying model parameter ``update`` can be assigned to:
 
-           #. 'basis' for orthogonality constraint on basis matrix,
-           #. 'mixture' for orthogonality constraint on mixture matrix.
+           #. 'onmf_basis' for orthogonality constraint on basis matrix,
+           #. 'onmf_mixture' for orthogonality constraint on mixture matrix.
        By default orthogonality constraint on basis matrix is used.
     :type update: `str`
 
@@ -250,14 +250,14 @@ class Onmf(nmf_std.Nmf_std):
         self.H = max(self.H, np.finfo(self.H.dtype).eps)
         self.W = max(self.W, np.finfo(self.W.dtype).eps)
 
-    def basis(self):
+    def onmf_basis(self):
         self.H = multiply(
             self.H, elop(dot(self.W.T, self.V), dot(self.W.T, dot(self.W, self.H)), div))
         self.W = multiply(
             self.W, elop(dot(self.V, self.H.T), dot(dot(self.W, self.H), dot(self.V.T, self.W)), div))
         self.W = elop(self.W, repmat(self.W.sum(0), self.V.shape[0], 1), div)
 
-    def mixture(self):
+    def onmf_mixture(self):
         self.H = multiply(
             self.H, elop(dot(self.W.T, self.V), dot(dot(self.H, self.V.T), dot(self.W, self.H)), div))
         self.H = elop(self.H, repmat(self.H.sum(1), 1, self.V.shape[1]), div)
